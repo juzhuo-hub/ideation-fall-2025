@@ -1,4 +1,4 @@
-# Crowdsourcing Project Idea: [Project Title]
+# Crowdsourcing Project Idea: Dream Decider
 
 ## Author
 Kieran Chetty chettyk
