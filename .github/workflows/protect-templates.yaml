@@ -1,0 +1,54 @@
+name: Protect Templates
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Check for template modifications
+        id: check
+        run: |
+          # List of protected files
+          PROTECTED="TEMPLATE-ROUND-1.md TEMPLATE-ROUND-2.md TEMPLATE-ROUND-3.md README.md"
+          
+          # Get changed files in this PR
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          
+          VIOLATIONS=""
+          for file in $PROTECTED; do
+            if echo "$CHANGED" | grep -q "^$file$"; then
+              VIOLATIONS="${VIOLATIONS}${file} "
+            fi
+          done
+          
+          if [ -n "$VIOLATIONS" ]; then
+            echo "Protected files modified: $VIOLATIONS"
+            echo "violations=$VIOLATIONS" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+      
+      - name: Comment on PR
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const violations = '${{ steps.check.outputs.violations }}';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## ❌ Template Protection Violation\n\n` +
+                    `You've modified protected template files: \`${violations}\`\n\n` +
+                    `**Please:**\n` +
+                    `1. Revert changes to template files\n` +
+                    `2. Create your own file \`[pennkey].md\` in the appropriate round folder\n` +
+                    `3. Copy the template content there and fill it out\n\n` +
+                    `Templates must remain unchanged for other students to use.`
+            });
