@@ -39,11 +39,11 @@ What is the likely cause (drought, flood, pests, unknown)? Rate confidence (1–
 
 ## Prior Work
 **Similar projects:** 
-GeoWiki → static land-use classification.
+GeoWiki: static land-use classification.
 
-Radiant Earth MLHub → ML dataset hosting (expert-curated).
+Radiant Earth MLHub: ML dataset hosting (expert-curated).
 
-PlantVillage → local crop-disease photos, not satellite or crowd-driven.
+PlantVillage: local crop-disease photos, not satellite or crowd-driven.
 
 How this differs:
 AgriAid focuses on dynamic agricultural stress detection, not general land use — the human crowd acts as an early-warning signal complementing vegetation indices, not replacing them.
@@ -56,4 +56,4 @@ From WeightIn: Visual feedback drives participation (“You just helped detect 1
 From Memory Mosaic: Real-world pilot testing (e.g., crowd-labeling one country’s season) boosts credibility.
 
 ## Why This Could Work
-This project fills a genuine data gap — early detection of crop stress before harvest failure — and supports humanitarian use cases. It’s technically straightforward (image labeling + consensus aggregation), visually compelling, and ethically meaningful. The end product — a global crop-stress map built from human perception — is both original and impactful, while perfectly aligned with the course’s focus on quality control, incentives, and aggregation.
+This project fills a genuine data gap - early detection of crop stress before harvest failure - and supports humanitarian use cases. It’s technically straightforward (image labeling + consensus aggregation), visually compelling, and ethically meaningful. The end product - a global crop-stress map built from human perception - is both original and impactful, while perfectly aligned with the course’s focus on quality control, incentives, and aggregation.
