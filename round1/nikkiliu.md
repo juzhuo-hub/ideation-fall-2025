@@ -38,14 +38,21 @@ What is the likely cause (drought, flood, pests, unknown)? Rate confidence (1–
 **Aggregation method:** Weighted consensus labeling with confidence scaling.
 
 ## Prior Work
-**Similar projects:** GeoWiki → static land-use classification.
+**Similar projects:** 
+GeoWiki → static land-use classification.
+
 Radiant Earth MLHub → ML dataset hosting (expert-curated).
+
 PlantVillage → local crop-disease photos, not satellite or crowd-driven.
+
 How this differs:
 AgriAid focuses on dynamic agricultural stress detection, not general land use — the human crowd acts as an early-warning signal complementing vegetation indices, not replacing them.
 
-**Lessons from past course projects:** From MoralMap: Real human perception captures nuance machines miss (e.g., partial yellowing).
+**Lessons from past course projects:** 
+From MoralMap: Real human perception captures nuance machines miss (e.g., partial yellowing).
+
 From WeightIn: Visual feedback drives participation (“You just helped detect 12 hectares of stressed crops”).
+
 From Memory Mosaic: Real-world pilot testing (e.g., crowd-labeling one country’s season) boosts credibility.
 
 ## Why This Could Work
