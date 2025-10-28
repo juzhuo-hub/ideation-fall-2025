@@ -16,7 +16,7 @@ jobs:
         id: check
         run: |
           # List of protected files
-          PROTECTED="TEMPLATE-ROUND1.md TEMPLATE-ROUND2.md TEMPLATE-ROUND3.md README.md"
+          PROTECTED="TEMPLATE-ROUND-1.md TEMPLATE-ROUND-2.md TEMPLATE-ROUND-3.md README.md"
           
           # Get changed files in this PR
           CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
