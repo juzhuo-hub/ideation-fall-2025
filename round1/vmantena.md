@@ -4,42 +4,43 @@
 Veda, vmantena
 
 ## Problem Statement
-Food delivery apps often show incomplete or outdated restaurant menus. This frustrates customers and reduces sales for small restaurants that rely on delivery platforms. My project will crowdsource accurate, up-to-date menu information for local restaurants that lack strong digital presence.
+Food delivery apps often show incomplete or outdated restaurant menus. This causes customer frustration and can reduce sales for small restaurants that rely on delivery platforms. This project will crowdsource accurate, structured menu information for places that lack a reliable digital presence.
 
 ## Core Concept
-**One-line pitch:** Users upload and verify real restaurant menus to keep delivery platforms accurate and current.
+**One-line pitch:** A crowdsourced system for capturing and validating up-to-date restaurant menu data.
 
-**Target users:** Food delivery customers and small restaurants that need reliable digital menus.
+**Target users:** Restaurant customers who rely on delivery apps, and small restaurants that need accurate menu visibility.
 
-**The crowd:** Volunteers, local diners, and social media users who visit restaurants and capture menu information.
+**The crowd:** Local diners, volunteers, and social media users visiting restaurants who are willing to upload menus and verify entries.
 
-**The task:** Workers photograph a menu or receipt, transcribe prices and items into structured fields, and validate entries submitted by others.
+**The task:** Take or upload a photo of a menu or receipt, transcribe each item and price into structured form, and verify entries submitted by others.
 
 ## Key Features
 1. Menu upload and transcription workflow
-2. Redundancy-based validation system
-3. Priority focus on restaurants with missing or outdated menus
+2. Redundancy and user-driven validation
+3. Priority for restaurants flagged as outdated or missing menus
 
 ## Feasibility Check
-**Data source:** Photos of physical menus, screenshots, Google Maps business listings, Yelp photos.
+**Data source:** Physical menu photos, screenshots from restaurant websites or Yelp, user uploads.
 
-**Budget reality:** Free volunteers + very small MTurk budget for validation tasks if needed.
+**Budget reality:** Primarily volunteer labor with optional low-cost MTurk validation tasks. (<$500)
 
-**Crowd size needed:** Hundreds. Most restaurants only require a few submissions each.
+**Crowd size needed:** Hundreds, since each restaurant only needs a few submissions for coverage.
 
-**Quality control approach:** Redundant submissions, consensus voting, gold-standard items seeded in the workflow.
+**Quality control approach:** Redundant submissions, majority-vote aggregation, and gold-standard checks seeded throughout tasks.
 
 ## Technical Approach
-**Human tasks:** Upload menu photo, transcribe text and prices, verify other people’s entries.
+**Human tasks:** Photo upload, manual transcription of items and prices, validation/comparison of existing fields.
 
-**Automated tasks:** Basic OCR to pre-fill text, flag inconsistencies, cluster menus by restaurant.
+**Automated tasks:** OCR to pre-fill text, duplicate detection, consistency checks, and confidence scoring.
 
-**Aggregation method:** Majority vote on each menu item field plus confidence scoring from multiple submissions.
+**Aggregation method:** Per-field consensus using majority vote with weighting by worker reliability.
 
 ## Prior Work
-**Similar projects:** OpenStreetMap for mapping civic infrastructure, Google Local Guides for business info. My project differs by specializing in menu accuracy and adding structured transcription tasks.
+**Similar projects:** • DataLabeler (04): Gathered structured fields from unstructured sources. My system applies this to restaurant menus with stronger validation emphasis.
+• Loopify (08): Layered worker validation. My project uses a similar iterative refinement process for accuracy.
 
-**Lessons from past course projects:** Scope must be tight with a clear, repetitive microtask. Provide workers feedback and show immediate progress to keep motivation high.
+**Lessons from past course projects:** Simpler microtasks improve participation and data quality. Both DataLabeler and Loopify showed that workers stay more accurate with clear structure and feedback, which directly shapes my workflow design.
 
 ## Why This Could Work
-Menu data is constantly being posted online by ordinary people already. A lightweight pipeline that collects and verifies this information can produce a valuable resource very quickly. The task is simple, highly repeatable, and doesn’t require specialized skill from workers.
+The tasks are quick, familiar, and already common behavior for diners who photograph menus. With a focused scope and strong validation design, this system can quickly gather high-quality menu data within course constraints and budget.
