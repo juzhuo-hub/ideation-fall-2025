@@ -1,43 +1,45 @@
-rowdsourcing Project Idea: [Project Title]
-Author
+# Crowdsourcing Project Idea: [Project Title]
+
+## Author
 [Your name and PennKey]
 
-Problem Statement
+## Problem Statement
 [In 2-3 sentences, describe the real-world problem your project will solve.]
 
-Core Concept
-One-line pitch: [What does your project do in one sentence?]
+## Core Concept
+**One-line pitch:** [What does your project do in one sentence?]
 
-Target users: [Who will benefit from this system?]
+**Target users:** [Who will benefit from this system?]
 
-The crowd: [Who are your workers? MTurk, volunteers, social media users?]
+**The crowd:** [Who are your workers? MTurk, volunteers, social media users?]
 
-The task: [What EXACTLY will crowd workers do? Be specific.]
+**The task:** [What EXACTLY will crowd workers do? Be specific.]
 
-Key Features
-[Core feature 1]
-[Core feature 2]
-[Core feature 3]
-Feasibility Check
-Data source: [Where will input data come from?]
+## Key Features
+1. [Core feature 1]
+2. [Core feature 2]  
+3. [Core feature 3]
 
-Budget reality: [How can this work with < $500?]
+## Feasibility Check
+**Data source:** [Where will input data come from?]
 
-Crowd size needed: [Rough estimate: 10s, 100s, 1000s of workers?]
+**Budget reality:** [How can this work with < $500?]
 
-Quality control approach: [Initial idea for ensuring quality]
+**Crowd size needed:** [Rough estimate: 10s, 100s, 1000s of workers?]
 
-Technical Approach
-Human tasks: [What parts require human intelligence?]
+**Quality control approach:** [Initial idea for ensuring quality]
 
-Automated tasks: [What parts will be computational?]
+## Technical Approach
+**Human tasks:** [What parts require human intelligence?]
 
-Aggregation method: [How will you combine crowd responses?]
+**Automated tasks:** [What parts will be computational?]
 
-Prior Work
-Similar projects: [Name 1-2 related projects and how yours differs]
+**Aggregation method:** [How will you combine crowd responses?]
 
-Lessons from past course projects: [What did you learn from reviewing past projects?]
+## Prior Work
+**Similar projects:** [Name 1-2 related projects and how yours differs]
 
-Why This Could Work
+**Lessons from past course projects:** [What did you learn from reviewing past projects?]
+
+## Why This Could Work
 [2-3 sentences on why this is viable within course constraints]
