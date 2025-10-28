@@ -1,45 +1,45 @@
-# Crowdsourcing Project Idea: [Project Title]
+# Crowdsourcing Project Idea: Culinary Archive
 
 ## Author
-Leha Choppara, lehac
+Leha Choppara (lehac)
 
 ## Problem Statement
-[In 2-3 sentences, describe the real-world problem your project will solve.]
+Families have boxes of handwritten recipes that are hard to search, share, or preserve. Culinary Archive digitizes, standardizes, and allergen-tags these recipes.
 
 ## Core Concept
-**One-line pitch:** [What does your project do in one sentence?]
+**One-line pitch:** Turn photos of handwritten recipes into searchable, standardized, allergy-aware cards via the crowd.
 
-**Target users:** [Who will benefit from this system?]
+**Target users:** Home cooks, culinary historians, families.
 
-**The crowd:** [Who are your workers? MTurk, volunteers, social media users?]
+**The crowd:** MTurk + volunteers, drawing on those interested in cooking.
 
-**The task:** [What EXACTLY will crowd workers do? Be specific.]
+**The task:** Transcribe; standardize units; tag allergens/cuisine; verify with second pass.
 
 ## Key Features
-1. [Core feature 1]
-2. [Core feature 2]  
-3. [Core feature 3]
+1. Allergen/ingredient tagging
+2. Printable recipe card database for satisfiably identified recipies
+3. Two-pass transcription + verification
 
 ## Feasibility Check
-**Data source:** [Where will input data come from?]
+**Data source:** User-uploaded images.
 
-**Budget reality:** [How can this work with < $500?]
+**Budget reality:** Through gamification and with MTurk, I think this could be done with $300.
 
-**Crowd size needed:** [Rough estimate: 10s, 100s, 1000s of workers?]
+**Crowd size needed:** 100s of workers needed.
 
-**Quality control approach:** [Initial idea for ensuring quality]
+**Quality control approach:** Multi-stage QC and LLM-assisted aggregation.
 
 ## Technical Approach
-**Human tasks:** [What parts require human intelligence?]
+**Human tasks:** Transcribe; normalize; tag.
 
-**Automated tasks:** [What parts will be computational?]
+**Automated tasks:** OCR prefill; unit conversion; duplicate detection; toxicity filter for notes.
 
-**Aggregation method:** [How will you combine crowd responses?]
+**Aggregation method:** Majority vote + LLM reconciliation.
 
 ## Prior Work
-**Similar projects:** [Name 1-2 related projects and how yours differs]
+**Similar projects:** DataLabeler. It has dense text/audio labeling with layered QC. We differentiate by applying the pattern to OCR cleanup + structured tags.
 
-**Lessons from past course projects:** [What did you learn from reviewing past projects?]
+**Lessons from past course projects:** We are using Memory Mosaic’s media upload pipeline, but we emphasize structured outputs rather than simple stacks.
 
 ## Why This Could Work
-[2-3 sentences on why this is viable within course constraints]
+Clear before/after value; modular tasks; low qualifications needed for crowd workers; durable public good.
