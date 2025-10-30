@@ -1,7 +1,8 @@
 # Crowdsourcing Project Idea: Penn Campus Sustainability Tracker
 
 ## Author
-Sadia Rahman rsadia
+Sadia Rahman
+rsadia
 
 ## Problem Statement
 University campuses are often unaware of the true extent of sustainability practices and waste management challenges. While Penn is committed to sustainability, the real-time tracking of individual actions and community efforts is often lacking. The need for a crowd-powered system arises to track and improve sustainable practices across campus.
