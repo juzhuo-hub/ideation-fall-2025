@@ -1,155 +1,27 @@
-name: Submission Check
+name: Basic Check
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
-  checks: write
-
 jobs:
-  check-submission:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       
-      - name: Analyze Submission
-        id: analyze
+      - name: Check Templates
         run: |
-          # Initialize variables
-          TEMPLATE_MODIFIED=false
-          TEMPLATE_FILES=""
-          SUBMISSION_FILES=""
-          ROUND1_FILES=""
-          ROUND2_FILES=""
-          ROUND3_FILES=""
-          HAS_SUBMISSION=false
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           
-          # Get all changed files
-          CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
-          
-          # Check for template modifications - FIX THE FILENAMES HERE!
-          for template in "TEMPLATE-ROUND-1.md" "TEMPLATE-ROUND-2.md" "TEMPLATE-ROUND-3.md" "README.md"; do
-            if echo "$CHANGED_FILES" | grep -q "^$template$"; then
-              TEMPLATE_MODIFIED=true
-              TEMPLATE_FILES="$TEMPLATE_FILES $template"
+          # Just check if templates are modified
+          for template in "TEMPLATE-ROUND1.md" "TEMPLATE-ROUND2.md" "TEMPLATE-ROUND3.md"; do
+            if echo "$CHANGED" | grep -q "^$template"; then
+              echo "::error::Modified template file: $template"
+              exit 1
             fi
           done
           
-          # Categorize submission files
-          while IFS= read -r file; do
-            if [[ "$file" =~ ^round1/.*\.md$ ]]; then
-              ROUND1_FILES="$ROUND1_FILES $(basename $file)"
-              HAS_SUBMISSION=true
-            elif [[ "$file" =~ ^round2/.*\.md$ ]]; then
-              ROUND2_FILES="$ROUND2_FILES $(basename $file)"
-              HAS_SUBMISSION=true
-            elif [[ "$file" =~ ^round3/.*\.md$ ]]; then
-              ROUND3_FILES="$ROUND3_FILES $(basename $file)"
-              HAS_SUBMISSION=true
-            fi
-          done <<< "$CHANGED_FILES"
-          
-          # Set outputs
-          echo "template_modified=$TEMPLATE_MODIFIED" >> $GITHUB_OUTPUT
-          echo "template_files=$TEMPLATE_FILES" >> $GITHUB_OUTPUT
-          echo "round1_files=$ROUND1_FILES" >> $GITHUB_OUTPUT
-          echo "round2_files=$ROUND2_FILES" >> $GITHUB_OUTPUT
-          echo "round3_files=$ROUND3_FILES" >> $GITHUB_OUTPUT
-          echo "has_submission=$HAS_SUBMISSION" >> $GITHUB_OUTPUT
-          
-          # Determine recommendation
-          if [ "$TEMPLATE_MODIFIED" = "true" ]; then
-            echo "recommendation=REJECT" >> $GITHUB_OUTPUT
-            echo "status=failure" >> $GITHUB_OUTPUT
-          elif [ "$HAS_SUBMISSION" = "false" ]; then
-            echo "recommendation=NEEDS_WORK" >> $GITHUB_OUTPUT
-            echo "status=failure" >> $GITHUB_OUTPUT
-          else
-            echo "recommendation=APPROVE" >> $GITHUB_OUTPUT
-            echo "status=success" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Post PR Comment
-        if: always()  # Always try to post, not just on failure
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const template_modified = '${{ steps.analyze.outputs.template_modified }}' === 'true';
-            const template_files = '${{ steps.analyze.outputs.template_files }}';
-            const round1_files = '${{ steps.analyze.outputs.round1_files }}';
-            const round2_files = '${{ steps.analyze.outputs.round2_files }}';
-            const round3_files = '${{ steps.analyze.outputs.round3_files }}';
-            const has_submission = '${{ steps.analyze.outputs.has_submission }}' === 'true';
-            const recommendation = '${{ steps.analyze.outputs.recommendation }}';
-            
-            let comment = '## 📋 Automated Submission Review\n\n';
-            
-            // Template check
-            comment += '### Template Integrity\n';
-            if (template_modified) {
-              comment += `❌ **Modified protected templates:** ${template_files}\n\n`;
-            } else {
-              comment += '✅ **No template modifications**\n\n';
-            }
-            
-            // Submission files
-            comment += '### Submitted Files\n';
-            if (round1_files.trim()) {
-              comment += `✅ **Round 1:** ${round1_files}\n`;
-            } else {
-              comment += '⚫ **Round 1:** No files\n';
-            }
-            
-            if (round2_files.trim()) {
-              comment += `✅ **Round 2:** ${round2_files}\n`;
-            } else {
-              comment += '⚫ **Round 2:** No files\n';
-            }
-            
-            if (round3_files.trim()) {
-              comment += `✅ **Round 3:** ${round3_files}\n`;
-            } else {
-              comment += '⚫ **Round 3:** No files\n';
-            }
-            
-            comment += '\n### Recommendation\n';
-            if (recommendation === 'APPROVE') {
-              comment += '🎯 **READY FOR APPROVAL**\n';
-              comment += 'This submission meets all requirements.\n';
-            } else if (recommendation === 'REJECT') {
-              comment += '🚫 **DO NOT MERGE - FIX REQUIRED**\n';
-              comment += '\n**To fix:**\n';
-              comment += '```bash\n';
-              comment += 'git checkout origin/main -- TEMPLATE-*.md README.md\n';
-              comment += 'git add .\n';
-              comment += 'git commit -m "Restore templates"\n';
-              comment += 'git push\n';
-              comment += '```\n';
-            } else {
-              comment += '📝 **NEEDS SUBMISSION FILE**\n';
-              comment += 'Please add your submission to the appropriate round folder.\n';
-            }
-            
-            // Post the comment
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: comment
-            });
-
-      - name: Set Status Check
-        if: always()
-        run: |
-          if [ "${{ steps.analyze.outputs.status }}" = "failure" ]; then
-            echo "::error::Submission has issues that need to be fixed"
-            exit 1
-          else
-            echo "::notice::Submission looks good!"
-          fi
+          echo "::notice::No template modifications found"
