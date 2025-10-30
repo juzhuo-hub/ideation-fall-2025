@@ -64,33 +64,28 @@ No, the main focus is the selection of mood and map location, adding a detailed 
 
 **How will you incentivize participation?**
 
-1. **Drive 2: Development & Accomplishment**
+1. **Drive 2: Development & Accomplishment**  
+   - Daily Streaks and Reflection Badges reward consistent participation, giving users visible milestones and progress indicators.  
+   - Progress bars and level icons reinforce a sense of mastery and achievement.  
 
-Daily Streaks and Reflection Badges reward consistent participation, giving users visible milestones and progress indicators.
+2. **Drive 5: Social Influence & Relatedness**  
+   - Anonymous Peer Comparison lets students see shared experiences, reducing stigma and isolation.  
+   - Public community goals (e.g., “1,000 mood check-ins this week”) encourage a sense of collective progress.  
 
-Progress bars and level icons reinforce a sense of mastery and achievement.
-2. **Drive 5: Social Influence & Relatedness**
+3. **Drive 1: Epic Meaning & Calling**  
+   - The app’s purpose—fighting Penn Face and promoting emotional openness—creates an intrinsic reason to participate.  
+   - Framing contributions as helping the community fosters empathy and purpose-driven engagement.  
 
-Anonymous Peer Comparison lets students see shared experiences, reducing stigma and isolation.
+4. **Drive 3: Empowerment of Creativity & Feedback**  
+   - Users can express moods with emojis, color gradients, or short captions, giving creative freedom within the system.  
+   - Seeing instant visual impact on the heatmap provides immediate feedback.  
 
-Public community goals (e.g., “1,000 mood check-ins this week”) encourage a sense of collective progress.
-3. **Drive 1: Epic Meaning & Calling**
+5. **Drive 6: Scarcity & Impatience**  
+   - Limited-time Campus Challenges (like “Midterm Check-in Week”) create short bursts of engagement.  
+   - Unlockable reflection badges available only during special events boost participation frequency.  
 
-The app’s purpose—fighting Penn Face and promoting emotional openness—creates an intrinsic reason to participate.
-
-Framing contributions as helping the community fosters empathy and purpose-driven engagement.
-4. **Drive 3: Empowerment of Creativity & Feedback**
-
-Users can express moods with emojis, color gradients, or short captions, giving creative freedom within the system.
-
-Seeing instant visual impact on the heatmap provides immediate feedback.
-5. **Drive 6: Scarcity & Impatience**
-
-Limited-time Campus Challenges (like “Midterm Check-in Week”) create short bursts of engagement.
-
-Unlockable reflection badges available only during special events boost participation frequency.
-6. **Core Drive 4: Ownership & Possession**
-Each user has a Personal Mood Journal tracking their own emotional history, creating a sense of personal value and attachment to the app.
+6. **Drive 4: Ownership & Possession**  
+   - Each user has a Personal Mood Journal tracking their own emotional history, creating a sense of personal value and attachment to the app.  
 
 **Budget & Cost Analysis:**
 
