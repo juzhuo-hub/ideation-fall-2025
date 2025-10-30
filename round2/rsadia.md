@@ -56,7 +56,7 @@ The skills required are relatively basic, as the tasks involve simple reporting 
 Participation will be incentivized through a point system, where users earn points for reporting and verifying sustainability actions. These points can be redeemed for rewards, such as discounts at local businesses, stores/restaurants around campus, or exclusive sustainability-related events. Leaderboards and periodic challenges will also drive engagement.
 
 **How much will it cost?**
-The initial cost will be for development and maintenance of the platform, including server hosting and reward management. Rough estimate: $500-$600 for development and hosting for the first semester.
+The initial cost will be for development and maintenance of the platform, including server hosting and reward management. Rough estimate: $400-$500 for development and hosting for the first semester.
 
 **Where will your data come from?**
 Data will come from user-generated content, including actions they’ve taken (e.g., recycling, energy savings) and verifications of others' actions.
