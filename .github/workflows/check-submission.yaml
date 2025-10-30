@@ -4,6 +4,12 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  checks: write
+
 jobs:
   check-submission:
     runs-on: ubuntu-latest
@@ -27,7 +33,7 @@ jobs:
           # Get all changed files
           CHANGED_FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           
-          # Check for template modifications
+          # Check for template modifications - FIX THE FILENAMES HERE!
           for template in "TEMPLATE-ROUND-1.md" "TEMPLATE-ROUND-2.md" "TEMPLATE-ROUND-3.md" "README.md"; do
             if echo "$CHANGED_FILES" | grep -q "^$template$"; then
               TEMPLATE_MODIFIED=true
@@ -49,7 +55,7 @@ jobs:
             fi
           done <<< "$CHANGED_FILES"
           
-          # Set outputs for next steps
+          # Set outputs
           echo "template_modified=$TEMPLATE_MODIFIED" >> $GITHUB_OUTPUT
           echo "template_files=$TEMPLATE_FILES" >> $GITHUB_OUTPUT
           echo "round1_files=$ROUND1_FILES" >> $GITHUB_OUTPUT
@@ -69,7 +75,8 @@ jobs:
             echo "status=success" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create Check Summary
+      - name: Post PR Comment
+        if: always()  # Always try to post, not just on failure
         uses: actions/github-script@v6
         with:
           script: |
@@ -81,158 +88,68 @@ jobs:
             const has_submission = '${{ steps.analyze.outputs.has_submission }}' === 'true';
             const recommendation = '${{ steps.analyze.outputs.recommendation }}';
             
-            // Build status message
-            let title, summary, text;
-            
-            if (recommendation === 'APPROVE') {
-              title = '✅ Ready for Approval';
-              summary = 'This submission looks good and is ready for review.';
-            } else if (recommendation === 'REJECT') {
-              title = '❌ Issues Found - Do Not Merge';
-              summary = 'This submission has issues that must be fixed before merging.';
-            } else {
-              title = '⚠️ Incomplete Submission';
-              summary = 'This submission is missing required files.';
-            }
-            
-            // Build detailed report
-            text = '## Submission Analysis\n\n';
+            let comment = '## 📋 Automated Submission Review\n\n';
             
             // Template check
-            text += '### Template Integrity Check\n';
+            comment += '### Template Integrity\n';
             if (template_modified) {
-              text += `❌ **Modified protected templates:** ${template_files}\n\n`;
+              comment += `❌ **Modified protected templates:** ${template_files}\n\n`;
             } else {
-              text += '✅ **No template modifications detected**\n\n';
+              comment += '✅ **No template modifications**\n\n';
             }
             
             // Submission files
-            text += '### Submitted Files\n';
+            comment += '### Submitted Files\n';
             if (round1_files.trim()) {
-              text += `✅ **Round 1:** ${round1_files}\n`;
+              comment += `✅ **Round 1:** ${round1_files}\n`;
             } else {
-              text += '⚫ **Round 1:** No files\n';
+              comment += '⚫ **Round 1:** No files\n';
             }
             
             if (round2_files.trim()) {
-              text += `✅ **Round 2:** ${round2_files}\n`;
+              comment += `✅ **Round 2:** ${round2_files}\n`;
             } else {
-              text += '⚫ **Round 2:** No files\n';
+              comment += '⚫ **Round 2:** No files\n';
             }
             
             if (round3_files.trim()) {
-              text += `✅ **Round 3:** ${round3_files}\n`;
+              comment += `✅ **Round 3:** ${round3_files}\n`;
             } else {
-              text += '⚫ **Round 3:** No files\n';
+              comment += '⚫ **Round 3:** No files\n';
             }
             
-            if (!has_submission) {
-              text += '\n⚠️ **No valid submission files found in any round folder**\n';
-            }
-            
-            // Recommendation
-            text += '\n### Recommendation\n';
+            comment += '\n### Recommendation\n';
             if (recommendation === 'APPROVE') {
-              text += '🎯 **Recommendation: APPROVE**\n';
-              text += 'This submission meets all requirements and can be merged after instructor review.\n';
+              comment += '🎯 **READY FOR APPROVAL**\n';
+              comment += 'This submission meets all requirements.\n';
             } else if (recommendation === 'REJECT') {
-              text += '🚫 **Recommendation: DO NOT MERGE**\n';
-              text += 'The student must:\n';
-              text += '1. Restore modified template files to original state\n';
-              text += '2. Create their submission in the appropriate round folder\n';
-              text += '3. Push corrected changes\n';
-            } else {
-              text += '📝 **Recommendation: NEEDS COMPLETION**\n';
-              text += 'The student should add their submission file to the appropriate round folder.\n';
-            }
-            
-            // Create the check run
-            await github.rest.checks.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: 'Submission Validation',
-              head_sha: context.payload.pull_request.head.sha,
-              status: 'completed',
-              conclusion: '${{ steps.analyze.outputs.status }}',
-              output: {
-                title: title,
-                summary: summary,
-                text: text
-              }
-            });
-
-      - name: Post Comment (only for issues)
-        if: steps.analyze.outputs.recommendation != 'APPROVE'
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const template_modified = '${{ steps.analyze.outputs.template_modified }}' === 'true';
-            const template_files = '${{ steps.analyze.outputs.template_files }}';
-            const has_submission = '${{ steps.analyze.outputs.has_submission }}' === 'true';
-            
-            let comment = '## 📋 Automated Submission Review\n\n';
-            
-            if (template_modified) {
-              comment += '### ❌ Template Files Modified\n';
-              comment += `You modified the following protected files: ${template_files}\n\n`;
-              comment += '**How to fix:**\n';
+              comment += '🚫 **DO NOT MERGE - FIX REQUIRED**\n';
+              comment += '\n**To fix:**\n';
               comment += '```bash\n';
               comment += 'git checkout origin/main -- TEMPLATE-*.md README.md\n';
               comment += 'git add .\n';
               comment += 'git commit -m "Restore templates"\n';
               comment += 'git push\n';
-              comment += '```\n\n';
-            }
-            
-            if (!has_submission) {
-              comment += '### 📝 Missing Submission File\n';
-              comment += 'Please create your submission file in the appropriate round folder.\n\n';
-              comment += '**Example:**\n';
-              comment += '```bash\n';
-              comment += 'cp TEMPLATE-ROUND-1.md round1/yourpennkey.md\n';
-              comment += '# Edit the file with your content\n';
-              comment += 'git add round1/yourpennkey.md\n';
-              comment += 'git commit -m "Add my submission"\n';
-              comment += 'git push\n';
               comment += '```\n';
+            } else {
+              comment += '📝 **NEEDS SUBMISSION FILE**\n';
+              comment += 'Please add your submission to the appropriate round folder.\n';
             }
             
-            comment += '\n---\n';
-            comment += '*This is an automated check. Once you fix these issues, the checks will pass.*';
-            
-            // Check if we already commented
-            const comments = await github.rest.issues.listComments({
+            // Post the comment
+            await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number
+              issue_number: context.issue.number,
+              body: comment
             });
-            
-            const botComment = comments.data.find(comment => 
-              comment.user.type === 'Bot' && 
-              comment.body.includes('Automated Submission Review')
-            );
-            
-            if (botComment) {
-              // Update existing comment
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: comment
-              });
-            } else {
-              // Create new comment
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body: comment
-              });
-            }
 
-      - name: Set Check Status
+      - name: Set Status Check
+        if: always()
         run: |
           if [ "${{ steps.analyze.outputs.status }}" = "failure" ]; then
             echo "::error::Submission has issues that need to be fixed"
             exit 1
+          else
+            echo "::notice::Submission looks good!"
           fi
