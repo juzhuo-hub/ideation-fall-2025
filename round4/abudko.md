@@ -49,7 +49,7 @@ Add more rows if needed
 
 I chose Auralynx because the core question—when do humans outperform simple audio heuristics or classical models at reading **prosodic cues**—is both scientifically interesting and buildable in five weeks if we ruthlessly limit scope. The new design fixes the two biggest risks from R2: (1) no two-sided marketplace at launch (we use a **fixed, consented clip library**) and (2) no live ML (we use **frozen baselines** computed offline). The user task is short (6–8 clips/round), repeatable, and intrinsically rewarding via skill badges, streaks, and “beat-the-baseline” moments—so we don’t need cash incentives.
 
-Technically, this is a CRUD web app with audio playback, two well-chosen labels (**Valence: positive/neutral/negative; Confidence: confident/hesitant**), and predeclared baselines: a transparent **prosody rule set** (Tier A) and a tiny **logistic regression** trained on a public corpus (Tier B). That lets us publish a clean “pre-registered” comparison and then, only after we collect enough judgments, optionally calibrate probabilities (not retrain) for analysis. Recruitment is anchored to a **captive audience** (one dorm floor + one large lecture), which is realistic for Week 1.
+Technically, this is a CRUD web app with audio playback, two well-chosen labels (**Valence: positive/neutral/negative; Confidence: confident/hesitant**), and predeclared baselines: a transparent **prosody rule set** (Tier A) and a tiny **logistic regression** trained on a public corpus (Tier B). That lets us publish a clean “pre-registered” comparison and then, only after we collect enough judgments, optionally calibrate probabilities (not retrain) for analysis. Recruitment is anchored to a captive audience, which is realistic for Week 1.
 
 *What convinced me*:
 - Frozen, pre-registered baselines (Tier A heuristics + Tier B logistic regression) keep the science honest and the build simple.
@@ -86,12 +86,8 @@ Auralynx is a 90-second audio game where players guess **valence** and **confide
 *The specific test I'll run Week 1*:
 
 - *Where*:  
-  1) **Dorm floor** GroupMe via RA partner (QR + short blurb),  
-  2) **WUFC** Slack #general,  
-  3) **Wharton Retail Club** Slack #announcements,  
-  4) **Locust Walk** tabling (poster + QR) between 12–2pm.
-- *When*:  
-  **Monday 10:00am** (Slack posts), **Sunday 8:00pm** (RA GroupMe post), **Monday 12–2pm** (Locust), all in Week 1.
+  1) Ed Posts   
+  2)  Slackx for clubs and group chats
 - *What*:  
   “Can you beat a simple AI at hearing emotion and confidence in voice? 90 seconds, 6 clips. Get your **Golden Ear** badge and see your score vs. baseline.” (one QR, instant start)
 - *Success metric*:  
@@ -112,11 +108,11 @@ At this stage, you are not expected to have formed teams, however if you already
 
 *Team members*:
 
-1. Alexander Budko (abudko) - PM, backend & analytics
+1. Alexander Budko (abudko) - PM, full-stack & analytics,
 2. Sofia Kikaleishvili ( ) - UX, recording coordinator, participant ops
 3. Martina Bulgarelli ( ) - Data & QC (gold items, agreement metrics)
-4. Anton Bakhurov ( ) - Frontend lead (Round UI, leaderboard, badges)
-5. Jason Gao ( ) - Audio processing & baseline features (Tier A/Tier B prep)
+4. Anton Bakhurov ( ) - Audio processing & baseline features (Tier A/Tier B prep)
+5. Jason Gao ( ) - full-stack, audio processing & baseline features help
 
 *Team status*:
 - [ ] Same team from Round 3
