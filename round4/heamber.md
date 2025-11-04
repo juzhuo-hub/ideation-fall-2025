@@ -94,7 +94,7 @@ _Be concrete. Not "social media" but "Post in r/UPenn and 3 class Slacks on Mond
 
 ---
 
-## 6. **Tentative** Team (Optional, Only If You Already Have An Idea)
+## 6. **Tentative** Team
 
 **Team members**:
 
