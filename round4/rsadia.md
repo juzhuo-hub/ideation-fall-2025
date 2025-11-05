@@ -12,9 +12,9 @@ _List the projects you seriously considered. Keep it brief._
 
 | Project Name | Source | Key Takeaway (1 sentence) |
 |--------------|--------|---------------------------|
-| [Project 1]  | Round 3 / R2 Drop / R1 / Instructor / New | [What did you learn about this project?] |
-| [Project 2]  | Round 3 / R2 Drop / R1 / Instructor / New | [What did you learn about this project?] |
-| [Project 3]  | Round 3 / R2 Drop / R1 / Instructor / New | [What did you learn about this project?] |
+| AccessWatch  | R1 | Innovative civic mapping concept with real-world impact but higher technical complexity and dependency on geospatial data validation. |
+| Microproof  | R1 | Creative approach to local fact verification but requires frequent real-world participation and moderation to ensure data reliability. |
+| NutriSnap  | R1 | Practical campus-focused idea with strong visual crowdsourcing but narrower long-term engagement potential. |
 
 _Add more rows if needed_
 
@@ -49,34 +49,34 @@ _Add more rows if needed_
 
 _Explain your thought process. What made you choose this project? What were the key factors? What trade-offs did you consider?_
 
-[Your reasoning here]
+I chose to continue developing TripTuner because it combines the creativity of travel planning with a well-defined, testable crowdsourcing framework. The project proved consistently strong through earlier rounds. It engages users intrinsically through travel storytelling and voting while still being technically achievable within the semester. Compared to the other projects, TripTuner strikes the right balance between ambition and feasibility. It’s broad enough to attract interest yet structured enough to deliver measurable outcomes like rankings and engagement metrics. While AccessWatch and MicroProof offered strong civic impact, both depended on sustained real-world participation, which would be difficult to achieve within a short academic timeline. NutriSnap had a clear task structure but limited novelty and risked repetitive data. TripTuner offers an engaging interface, dynamic data, and clear validation paths through Reddit and campus communities.
 
 **What convinced me**:
-- [Key reason 1]
-- [Key reason 2]
-- [Key reason 3]
+- Engaging, high-intrinsic-motivation task (sharing and evaluating trips).
+- Clear measurable success metrics (votes, submissions, satisfaction).
+- Scalable architecture with manageable scope and modular design.
 
 **What concerns me** (and how I'll address it):
-- [Concern 1] → [How you'll mitigate it]
-- [Concern 2] → [How you'll mitigate it]
+- Recruiting enough contributors early → Leverage Reddit (r/travel, r/solotravel) and Penn class Slacks for pilot testing.
+- Maintaining quality of itineraries → Require structured submission fields and apply AI moderation to flag incomplete or unrealistic entries.
 
 ---
 
 ## 4. What I'm Building
 
 **One-sentence project description**:
-[Describe your project in one clear sentence]
+TripTuner is a crowdsourced travel-planning platform where users share, rate, and refine realistic itineraries based on budget, duration, and interests.
 
 **MVP Scope** (3-4 core features only):
 
-1. **[Feature 1 name]**: [1-sentence description]
-2. **[Feature 2 name]**: [1-sentence description]
-3. **[Feature 3 name]**: [1-sentence description]
-4. **[Feature 4 name - OPTIONAL]**: [1-sentence description]
+1. **Itinerary Submission Portal**: Structured form for users to submit travel plans with destination, duration, and cost.
+2. **Voting & Feedback System**: Users rate itineraries on realism, value, and appeal.
+3. **Aggregated Ranking Engine**: Weighted scoring combines votes and feedback to surface top plans.
+4. **Tag-Based Filtering**: Filter itineraries by trip type or interest (e.g., budget, adventure, cultural).
 
 **What I'm explicitly NOT building** (to keep scope realistic):
-- [Feature cut]
-- [Feature cut]
+- Full AI summarization assistant.
+- Multi-city or automated route optimization.
 - [Feature cut]
 
 ---
