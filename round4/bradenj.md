@@ -13,8 +13,8 @@ _List the projects you seriously considered. Keep it brief._
 | Project Name | Source | Key Takeaway (1 sentence) |
 |--------------|--------|---------------------------|
 | StreetEats  | Round 3 | I learned about potential issues and paths to take to mitigate them and improve the idea. |
-| MenuMatcher | Instructor| [What did you learn about this project?] |
-| [Project 3]  | Round 3 / R2 Drop / R1 / Instructor / New | [What did you learn about this project?] |
+| MenuMatcher | Instructor| I learned about the idea for crowdsourced dining hall reviews. |
+| Kinnect  | Round 3 | Was given the overview during the group discussion, seems like a very good idea if technical scope is reduced. |
 
 _Add more rows if needed_
 
