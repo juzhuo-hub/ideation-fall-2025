@@ -19,10 +19,10 @@ _List the projects you seriously considered. Keep it brief._
 _Add more rows if needed_
 
 **Resources I used**:
-- [ ] Rubric scoring (RUBRIC-PROJECT-VIABILITY.md)
-- [ ] V2 detailed analyses (reports/v2-analyses/)
-- [ ] Steelman Analysis pathways (STEELMAN-ANALYSIS.md)
-- [ ] Group discussions
+- [X] Rubric scoring (RUBRIC-PROJECT-VIABILITY.md)
+- [X] V2 detailed analyses (reports/v2-analyses/)
+- [X] Steelman Analysis pathways (STEELMAN-ANALYSIS.md)
+- [X] Group discussions
 - [ ] Other: [specify]
 
 ---
