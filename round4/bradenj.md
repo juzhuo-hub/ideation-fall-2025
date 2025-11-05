@@ -125,13 +125,13 @@ At this stage, you are not expected to have formed teams, however if you already
 ## 7. Reflection
 
 **Most valuable part of Round 4**:
-[What helped you most in making this decision?]
+It was very valuable to read the analyses for my own project and analyze it critically. I also appreciated seeing new ideas.
 
 **Biggest surprise**:
-[What did you discover that you didn't expect?]
+I think reading the analyses showed how important going through rounds and seeing different perspectives on an idea is.
 
 **One thing I'd tell future students about Round 4**:
-[Your advice]
+Think more critically about your and new project ideas in advance.
 
 ---
 
