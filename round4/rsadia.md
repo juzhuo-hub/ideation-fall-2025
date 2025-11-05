@@ -1,8 +1,8 @@
 # Round 4 Reflection: Final Project Decision
 
-**Name**: [Your name]
-**PennKey**: [Your PennKey]
-**Date**: [Date]
+**Name**: Sadia Rahman
+**PennKey**: rsadia
+**Date**: 11-04-25
 
 ---
 
@@ -29,17 +29,17 @@ _Add more rows if needed_
 
 ## 2. My Decision
 
-**Project Name**: [Your final choice]
+**Project Name**: TripTurner
 
 **Decision type**:
 - [ ] STAYING with Round 3 project (same approach)
-- [ ] STAYING with Round 3 project (modified approach/scope)
+- [X] STAYING with Round 3 project (modified approach/scope)
 - [ ] PIVOTING to different project
 - [ ] JOINING another team's project
 
 **If pivoting or adopting someone's idea**:
-- Original author (if applicable): [Name/PennKey]
-- Original round: [R1 / R2 / R3 / Instructor idea]
+- Original author (if applicable): Jevin Ta jevinta
+- Original round: R1
 
 ---
 
