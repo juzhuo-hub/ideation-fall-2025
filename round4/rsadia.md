@@ -77,7 +77,7 @@ TripTuner is a crowdsourced travel-planning platform where users share, rate, an
 **What I'm explicitly NOT building** (to keep scope realistic):
 - Full AI summarization assistant.
 - Multi-city or automated route optimization.
-- [Feature cut]
+- Complex account or profile management (anonymous or simple sign-in only).
 
 ---
 
@@ -87,15 +87,15 @@ TripTuner is a crowdsourced travel-planning platform where users share, rate, an
 
 _Be concrete. Not "social media" but "Post in r/UPenn and 3 class Slacks on Monday at 10am"_
 
-- **Where**: [Exact channels/locations]
-- **When**: [Specific day and time]
-- **What**: [What you'll post/ask/test]
-- **Success metric**: [How will you know if it worked? Be specific with numbers]
+- **Where**: Penn-related programs (e.g., Collective Success, Penn Engineering, Penn Abroad), r/UPenn, and r/travel.
+- **When**: Wednesday, November 12th at 5:00 PM
+- **What**: Share a quick Typeform or Google Form prototype asking users to (1) submit a 2–3 day itinerary under a self-chosen budget and (2) upvote or rate at least one existing itinerary. Include visuals and clear examples.
+- **Success metric**: At least 20 itinerary submissions and 50+ votes within 5 days.
 
 **If Week 1 test fails, I will**:
 - [ ] Pivot to: [alternative approach]
-- [ ] Use MTurk/paid participants
-- [ ] Try different recruitment channel: [specify]
+- [X] Use MTurk/paid participants
+- [X] Try different recruitment channel: Recruit from Reddit travel communities for higher engagement.
 - [ ] Simplify the task to: [easier version]
 - [ ] Other: [specify]
 
@@ -107,14 +107,14 @@ At this stage, you are not expected to have formed teams, however if you already
 
 **Team members**:
 
-1. [Name] ([PennKey]) - [Primary role]
-2. [Name] ([PennKey]) - [Primary role]
-3. [Name] ([PennKey]) - [Primary role] _(optional)_
-4. [Name] ([PennKey]) - [Primary role] _(optional)_
+1. Liana Veerasamy lianav - TBD
+2. Julia Zhuo juzhuo - TBD
+3. Jevin Ta jevinta - TBD
+4. Arushi Agarwal arushiga - TBD
 
 **Team status**:
 - [ ] Same team from Round 3
-- [ ] New team formed during Round 4
+- [X] New team formed during Round 4
 - [ ] Solo (will find teammates later)
 - [ ] Joining an existing team
 
@@ -123,25 +123,25 @@ At this stage, you are not expected to have formed teams, however if you already
 ## 7. Reflection
 
 **Most valuable part of Round 4**:
-[What helped you most in making this decision?]
+The rubric and Steelman analysis helped clarify feasibility and practicality, and helped us think about how we can go about approaching this project in a way that will allow us to be creative. 
 
 **Biggest surprise**:
-[What did you discover that you didn't expect?]
+How many oversights there were that were found through the AI analysis.
 
 **One thing I'd tell future students about Round 4**:
-[Your advice]
+Don’t pick the “smartest” idea. Pick the one you can actually test and improve within a few weeks.
 
 ---
 
 ## Commitment
 
 **I commit to**:
-- [ ] Building the MVP scope above (3-4 features maximum)
-- [ ] Running a concrete Week 1 validation test
-- [ ] Pivoting if Week 1 shows <20% success
-- [ ] Meeting with instructor if I hit major blockers
+- [X] Building the MVP scope above (3-4 features maximum)
+- [X] Running a concrete Week 1 validation test
+- [X] Pivoting if Week 1 shows <20% success
+- [X] Meeting with instructor if I hit major blockers
 
-**Signature**: _________________________ **Date**: _____________
+**Signature**: Sadia Rahman **Date**: 11/05/2025
 
 ---
 
