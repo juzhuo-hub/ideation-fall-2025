@@ -12,9 +12,9 @@ List the projects you seriously considered. Keep it brief.
 
 | Project Name     | Source   | Key Takeaway (1 sentence) |
 |------------------|----------|---------------------------|
-| MoodMap@Penn     | Round 3  | Strong campus fit with simple tech and clear value; success hinges on securing one captive audience (e.g., a dorm floor or class) in Week 1 to beat the cold start. |
-| StreetEats       | Round 3  | Viable if it pivots to Penn-only with pre-seeded content or truck partnerships; otherwise real-time tracking is a cold-start trap. |
-| Auralynx         | R2 Drop  | Creative concept exploring human vs. AI perception of voices; dropped for technical overscope and dual-user dependency but still rich in experimental potential. |
+| Kinnect          | Round 3  | Fitness gamification with team challenges and live activity maps; technically straightforward but would need sustained engagement and wearable API integrations that could complicate the MVP. |
+| TerraTruth       | Round 3  | Satellite imagery analysis for humanitarian causes with reputation systems; there's a compelling mission-driven angle but depends on partner NGOs and complex image pipelines that are risky for Week 1. |
+| Auralynx         | R2 Drop  | Human-vs-AI voice perception experiment with frozen baselines; simplified from original R2 pitch by removing speaker uploads and using pre-recorded clips, making it instantly playable. |
 
 Add more rows if needed
 
