@@ -210,20 +210,46 @@ You have 4 options:
 
 ### Part 5: Written Reflection (15 minutes)
 
-You need to write a reflection that summarizes your thoughts:
-- What projects did you look into during this session?
-- What are the observations you made in favor, or against the projects you were interested in?
+**Use the template**: [`TEMPLATE-ROUND-4.md`](TEMPLATE-ROUND-4.md)
+
+**See example**: [`SAMPLE-ROUND-4.md`](SAMPLE-ROUND-4.md)
+
+Write a comprehensive reflection covering:
+
+**Part 1: Projects Explored**
+- List all projects you considered
+- Score each using the rubric
+
+**Part 2: Analysis & Observations**
+- For each project: observations in favor and against
+- Key insights from V1/V2 analyses, Steelman pathways
+
+**Part 3: Decision-Making Process**
 - How did you make your final decision?
+- What factors were most important?
+- What influenced you?
 
-Think about what you would like your final project to be:
+**Part 4: Final Project Commitment**
+- Project name and description
+- MVP scope (3-4 features MAX)
+- Week 1 validation plan (specific!)
+- Team composition
 
-**Make Commitments**:
-- What is your project? (1 sentence)
-- What is your MVP? (3-4 features max)
-- What will you test Week 1? (specific recruitment/validation test)
-- Who is on your team? (names + roles)
+**Part 5: Confidence & Concerns**
+- Confidence level + what gives you confidence
+- What concerns you + how you're addressing it
+- Expected outcomes (best/realistic/worst case)
 
-**Submit Commitment** (via form/Google Doc/Gradescope - instructor will specify)
+**Part 6: Reflection on Process**
+- What you learned from Round 4
+- Most difficult part of the decision
+- Advice for future students
+
+**Submission**:
+1. Copy [`TEMPLATE-ROUND-4.md`](TEMPLATE-ROUND-4.md)
+2. Fill it out completely
+3. Save as `round4/[your-pennkey].md`
+4. Submit via pull request
 
 ---
 
@@ -374,67 +400,6 @@ Here are fresh ideas scored with the rubric. Feel free to adopt/adapt:
 **MVP (2 weeks)**: 10 courses, manual entry, simple calendar view
 
 **Limitation**: Accuracy (wrong dates harm users)
-
----
-
-## Decision Form Template
-
-**Copy this into a document and fill out:**
-
-```
-NETS 2130 - Round 4 Project Decision
-
-Name: _________________
-Date: _________________
-
-CURRENT PROJECT (Round 3):
-- Project name: _________________
-- Viability score: ___/30
-- Biggest limitation: _________________
-
-DECISION:
-☐ STAY (same approach)
-☐ STAY (different pathway - specify: _________________)
-☐ PIVOT (to: _________________)
-☐ JOIN (team/project: _________________)
-
-FINAL PROJECT COMMITMENT:
-- Project name: _________________
-- One-sentence description: _________________
-- Viability score (if new): ___/30
-
-MVP SCOPE (3-4 features max):
-1. _________________
-2. _________________
-3. _________________
-4. _________________ (optional)
-
-WEEK 1 VALIDATION PLAN:
-What specific test will you run Week 1?
-_________________
-_________________
-
-How will you measure success?
-_________________
-_________________
-
-What is your backup plan if it fails?
-_________________
-_________________
-
-TEAM:
-- Team member 1: _________________ (role: _________________)
-- Team member 2: _________________ (role: _________________)
-- Team member 3: _________________ (role: _________________)
-- Team member 4: _________________ (role: _________________)
-
-CONFIDENCE LEVEL:
-☐ High (I'm confident this will work)
-☐ Medium (I think this will work if we execute well)
-☐ Low (I have concerns but will try)
-
-SIGNATURE: _________________
-```
 
 ---
 
